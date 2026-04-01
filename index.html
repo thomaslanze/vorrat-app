@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Mein Vorrat">
+  <meta name="theme-color" content="#2D9B6E">
+  <title>Mein Vorrat</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header id="app-header">
+      <div class="header-content">
+        <h1 id="page-title">Mein Vorrat</h1>
+        <div id="header-actions"></div>
+      </div>
+    </header>
+
+    <main id="main-content"></main>
+
+    <nav id="bottom-nav">
+      <button class="nav-btn active" data-view="inventory">
+        <span class="nav-icon">🥫</span>
+        <span class="nav-label">Vorrat</span>
+      </button>
+      <button class="nav-btn" data-view="scanner">
+        <span class="nav-icon">📷</span>
+        <span class="nav-label">Scannen</span>
+      </button>
+      <button class="nav-btn" data-view="shopping">
+        <span class="nav-icon">🛒</span>
+        <span class="nav-label">Einkauf</span>
+        <span id="shopping-badge" class="badge hidden">0</span>
+      </button>
+      <button class="nav-btn" data-view="settings">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-label">Einstellungen</span>
+      </button>
+    </nav>
+  </div>
+
+  <div id="modal-overlay" class="hidden">
+    <div id="modal-container">
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
